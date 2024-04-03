@@ -1,0 +1,25 @@
+<div class="row">
+  <div *ngFor="let product of products" class="col-md-2">
+    <div class="product px-2 py-4">
+      <a
+        [routerLink]="['/productdetails', product._id]"
+        routerLinkActive="active"
+      >
+        <img class="w-100" src="{{ product.imageCover }}" />
+        <span class="text-main fw-bold font-sm">{{
+          product.category.name
+        }}</span>
+
+        <h3 class="h6">{{ product.title.split(" ").slice(0, 2).join(" ") }}</h3>
+        <div>
+          <span class="text-muted fw-bold font-sm"
+            >{{ product.price }} EGP</span
+          >
+        </div>
+        <div><i class="fa-solid fa-star"></i></div>
+
+        <button class="btn bg-main text-white w-100">+ Add</button>
+      </a>
+    </div>
+  </div>
+</div>
